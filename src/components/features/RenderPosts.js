@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom';
 const RenderPosts = () => {
 
   const posts = useSelector(({ posts }) => posts)
-  console.log(posts)
-  console.log(posts.author)
+  
   return (
     <div className= "row">
     {posts.map(post => (
