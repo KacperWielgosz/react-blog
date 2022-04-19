@@ -1,7 +1,7 @@
-const Header = () => {
+const Header = (props) => {
   return(
     <h1>
-      Header
+      {props.children}
     </h1>
   )
 }
