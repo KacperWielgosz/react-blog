@@ -20,14 +20,13 @@ const Post = () => {
 
   const { id } = useParams()
   const posts = useSelector(state => getPostById(state, id))
-    console.log(posts)
-    console.log(id)
 
   if(!posts) return <Navigate to="/" />
   else return(
     <div>
       <div className="d-flex">
         <h1 className="me-auto">{posts.title}</h1>
+
         <button className="m-1 btn btn btn-outline-info">Edit</button>
         <button onClick={handleShow} className="m-1 btn btn-outline-danger">Delete</button>
       </div>
