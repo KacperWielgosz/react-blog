@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { getAllPosts } from '../../redux/store';
 import Button from '../common/Button'
 import { Link } from 'react-router-dom';
+import shortid from 'shortid'
 
 const RenderPosts = () => {
 
@@ -10,7 +11,7 @@ const RenderPosts = () => {
   return (
     <div className= "row">
       {posts.map(post => (
-        <div className="col-md-4">
+        <div key={post.id} className="col-md-4">
           <div className=" col-12 border border-secondary rounded p-4" key={post.id}>
             <h3 className="mt-4">{post.title}</h3>
             <p><span>Author:</span> {post.author}</p>
