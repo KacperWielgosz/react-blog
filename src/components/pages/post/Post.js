@@ -5,6 +5,9 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import {NavLink} from 'react-router-dom';
+import Nav from 'react-bootstrap/Nav';
+
 
 const Post = () => {
 
@@ -26,8 +29,11 @@ const Post = () => {
     <div>
       <div className="d-flex">
         <h1 className="me-auto">{posts.title}</h1>
-
-        <button className="m-1 btn btn btn-outline-info">Edit</button>
+        <Nav.Link as={NavLink} to={`/post/edit/${posts.id}`}>
+           <Button className="mx-2" variant="outline-info">
+             Edit
+           </Button>
+         </Nav.Link>
         <button onClick={handleShow} className="m-1 btn btn-outline-danger">Delete</button>
       </div>
       <p className="mt-4">
@@ -50,8 +56,7 @@ const Post = () => {
             <Modal.Title>Modal title</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            I will not close if you click outside me. Don't even try to press
-            escape key.
+            Modal body
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleClose}>

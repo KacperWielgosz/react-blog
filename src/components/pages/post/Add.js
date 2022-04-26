@@ -1,4 +1,4 @@
-import AddPostForm from '../../features/addPostForm'
+import AddPostForm from '../../features/AddPostForm'
 
 const Add = () => {
   return(
