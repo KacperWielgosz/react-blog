@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useParams, Navigate } from 'react-router-dom';
-import { getPostById, removePost} from "../../../redux/postsRedux";
+import { getPostById, removePost} from "../../redux/postsRedux";
 import { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';

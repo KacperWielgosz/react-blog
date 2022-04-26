@@ -1,4 +1,4 @@
-import EditPostForm from '../../features/EditPostForm'
+import EditPostForm from '../features/EditPostForm'
 
 const Edit = () => {
   return(

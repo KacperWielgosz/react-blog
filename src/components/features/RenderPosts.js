@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import { getAllPosts } from '../../redux/store';
-import Button from '../common/Button'
 import { Link } from 'react-router-dom';
 import shortid from 'shortid'
 

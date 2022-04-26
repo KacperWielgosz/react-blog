@@ -2,9 +2,9 @@ import { Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap'
 
 import About from './components/pages/About';
-import Edit from './components/pages/post/Edit';
-import Add from './components/pages/post/Add';
-import Post from './components/pages//post/Post';
+import Edit from './components/pages/Edit';
+import Add from './components/pages/Add';
+import Post from './components/pages/Post';
 import NoMatch from './components/pages/NoMatch';
 import Home from './components/pages/Home';
 import Footer from './components/views/Footer';
