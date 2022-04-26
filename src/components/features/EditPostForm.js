@@ -5,7 +5,7 @@ import PostForm from './PostForm';
 import {useDispatch} from 'react-redux';
 import {editPost} from '../../redux/postsRedux';
 import {useNavigate} from 'react-router-dom';
-import {Navigate} from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const EditPostForm = () => {
   const navigate = useNavigate();

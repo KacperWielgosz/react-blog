@@ -1,13 +1,11 @@
 import { useSelector } from 'react-redux';
-import { useParams, Navigate } from 'react-router-dom';
-import { getPostById, removePost} from "../../redux/postsRedux";
-import { useState } from 'react'
+import { useParams, Navigate, NavLink } from 'react-router-dom';
+import { getPostById, removePost} from '../../redux/postsRedux';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import {NavLink} from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
-
 
 const Post = () => {
 
@@ -47,27 +45,25 @@ const Post = () => {
       <p className="mt-4">{posts.content}</p>
 
       <Modal
-          show={show}
-          onHide={handleClose}
-          backdrop="static"
-          keyboard={false}
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>Modal title</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            Modal body
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="danger" onClick={handleSubmit}>Delete</Button>
-          </Modal.Footer>
-        </Modal>
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Modal body
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="danger" onClick={handleSubmit}>Delete</Button>
+        </Modal.Footer>
+      </Modal>
     </div>
-
-
   )
 }
 
