@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Nav from 'react-bootstrap/Nav';
+import dateToStr from '../../utils/dateToStr';
 
 const Post = () => {
 
@@ -28,9 +29,9 @@ const Post = () => {
       <div className="d-flex">
         <h1 className="me-auto">{posts.title}</h1>
         <Nav.Link as={NavLink} to={`/post/edit/${posts.id}`}>
-           <Button className="mx-2" variant="outline-info">
+           <button className="m-1 btn btn-outline-info">
              Edit
-           </Button>
+           </button>
          </Nav.Link>
         <button onClick={handleShow} className="m-1 btn btn-outline-danger">Delete</button>
       </div>
@@ -40,7 +41,7 @@ const Post = () => {
       </p>
       <p>
         <span className="fw-bold">Published:</span>
-        {posts.publishedDate}
+        { dateToStr(posts.publishedDate) }
       </p>
       <p className="mt-4">{posts.content}</p>
 
