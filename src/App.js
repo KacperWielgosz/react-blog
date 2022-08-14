@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap'
-
+import CategoryPage from './components/pages/CategoryPage';
+import Categories from './components/pages/Categories';
 import About from './components/pages/About';
 import Edit from './components/pages/Edit';
 import Add from './components/pages/Add';
@@ -20,6 +21,8 @@ function App() {
         <Route path="/post/edit/:id" element={<Edit />} />
         <Route path="/post/add" element={<Add />} />
         <Route path="/post/:id" element={<Post />} />
+        <Route path="/categories" element={ <Categories /> } />
+        <Route path="/categories/:categoryName" element={<CategoryPage />} />
         <Route path="*" element={<NoMatch />} />
       </Routes>
       <Footer />

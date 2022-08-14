@@ -43,6 +43,10 @@ const Post = () => {
         <span className="fw-bold">Published:</span>
         { dateToStr(posts.publishedDate) }
       </p>
+      <p>
+        <span className="fw-bold">Category:</span>
+        {posts.category}
+      </p>
       <p className="mt-4">{posts.content}</p>
 
       <Modal

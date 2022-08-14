@@ -1,11 +1,13 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {useState} from 'react';
+import { useSelector } from "react-redux";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useForm } from "react-hook-form";
+import { getAllCategories } from "../../redux/categoriesRedux";
 
 const PostForm = ({action, actionText, ...props}) => {
   const [title, setTitle] = useState(props.title || '');
@@ -18,11 +20,14 @@ const PostForm = ({action, actionText, ...props}) => {
 
   const { register, handleSubmit: validate, formState: { errors } } = useForm();
 
+  const categories = useSelector(getAllCategories);
+  const [category, setCategory] = useState(props.category || '');
+
   const handleSubmit = () => {
     setContentError(!content);
     setDateErorr(!publishedDate);
     if(content && publishedDate) {
-      action({title, author, publishedDate, shortDescription, content});
+      action({title, author, publishedDate, shortDescription, content, category});
     }
   };
 
@@ -70,6 +75,16 @@ const PostForm = ({action, actionText, ...props}) => {
           placeholder="Enter comment"
         />
       {errors.shortDescription && <small className="d-block fs-6 fw-light form-text text-danger mt-2">Title is too short (min is 20)</small>}
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formCategory">
+        <Form.Label>Category</Form.Label>
+        <Form.Select value={category} onChange={e => setCategory(e.target.value)}>
+          <option>Select Category</option>
+          {categories.map( category => (
+            <option key={category}>{category}</option>
+          ))}
+        </Form.Select>
       </Form.Group>
 
       <Form.Group className="mb-3" >

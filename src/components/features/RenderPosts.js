@@ -16,6 +16,7 @@ const RenderPosts = () => {
             <h3 className="mt-4">{post.title}</h3>
             <p><span>Author:</span> {post.author}</p>
             <p><span>Published:</span> { dateToStr(post.publishedDate) }</p>
+            <p><span>Category:</span> {post.category}</p>
             <p>{post.shortDescription}</p>
             <Link to={"/post/" + post.id}>
               <button className="btn btn-primary mb-4">Read more</button>
